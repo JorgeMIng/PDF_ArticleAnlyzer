@@ -1,0 +1,2 @@
+[submodule "util/api/grobid_client_python"]
+	url = https://github.com/kermitt2/grobid_client_python.git
