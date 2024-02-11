@@ -1,0 +1,7 @@
+omegaconf
+matplotlib
+wordcloud
+bs4
+requests
+rich
+glob2

@@ -2,7 +2,7 @@ from util.uploaders.file_uploader import FileUploader
 from util.api.grobid_client_python.grobid_client.grobid_client import GrobidClient
 from util.logger import logging
 from bs4 import BeautifulSoup
-from omegaconf import DictConfig
+from omegaconf import DictConfig,ListConfig
 from wordcloud import WordCloud as WC
 import matplotlib.pyplot as plt
 from util.api.API import BaseAPI
@@ -18,7 +18,10 @@ class CountAtritubte(BaseAPI):
 
     def __init__(self,api_config:DictConfig,server_config:DictConfig):
         try:
-            self.stats = api_config.count.stats if isinstance(api_config.count.stats,list) else [api_config.count.stats]
+            if isinstance(api_config.count.stats,ListConfig):
+                self.stats=api_config.count.stats
+            else:
+                self.stats=[api_config.count.stats]
             logging.info("Stats to be count "+str(self.stats)) 
             super().__init__(api_config,server_config)
             self.stadistics =self.proccesed_files
@@ -59,7 +62,7 @@ class CountAtritubte(BaseAPI):
             plt.savefig(file_path)
             
             logging.info("Plot about "+stat+" is store at "+file_path)
-        plt.close()
+            plt.close()
     
     def show_plots(self):
         
@@ -67,12 +70,10 @@ class CountAtritubte(BaseAPI):
             #os.path.basename(file_path).split(self.api_config.grobid.format)[0]
             stat_values=self.list_stat(stat)
             self.draw_plot(self.get_labels(),stat_values)
-        plt.show()
-        plt.close()
+            plt.show()
+            plt.close()
         
     def draw_plot(self,labels,stats): 
-        print(labels)
-        print(stats) 
         plt.bar(x=labels,height=stats,width=self.api_config.plot.width,align=self.api_config.plot.align,color=self.api_config.plot.color,edgecolor=self.api_config.plot.edgecolor)
     
     def list_stat(self,stat:str):
