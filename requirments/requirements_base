@@ -1,0 +1,10 @@
+If you want to try to install the dependancies on other python version that is not check, this libraries that where install
+without taking into account their sub-dependencies
+
+omegaconf
+matplotlib
+wordcloud
+bs4
+requests
+rich
+glob2

@@ -4,6 +4,17 @@ from omegaconf import DictConfig, OmegaConf
 
 
 def load_config(config_name:str):
+    """_summary_
+
+    Args:
+        config_name (str): _description_
+
+    Raises:
+        ValueError: _description_
+
+    Returns:
+        _type_: _description_
+    """
     try:
         desired_path =os.path.join(os.path.dirname(__file__),config_name)
     except Exception:

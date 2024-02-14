@@ -19,6 +19,6 @@ plot:
   color: "blue"
   edgecolor: 'black'
 
-
+#["figures","ref","p"] for more than one stat
 count:
-  stats: "figure"
+  stats: "figure" 
