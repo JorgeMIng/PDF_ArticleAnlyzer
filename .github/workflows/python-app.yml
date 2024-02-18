@@ -24,10 +24,10 @@ jobs:
         submodules: recursive
     - name: Initialize submodules
       run: git submodule init
-      working-directory: ./path/to/your/project  # ajusta la ruta a tus submódulos
+      working-directory: pdf_analyzer/api/grobid_client_python  # ajusta la ruta a tus submódulos
     - name: Update submodules
       run: git submodule update
-      working-directory: ./path/to/your/project  # ajusta la ruta a tus submódulos
+      working-directory: pdf_analyzer/api/grobid_client_python  # ajusta la ruta a tus submódulos
     - name: Pdf-analyzer
       uses: actions/setup-python@v3
       with:
