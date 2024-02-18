@@ -24,7 +24,8 @@ class stadistic_test(unittest.TestCase):
         self.assertEqual(self.result.get_len(),2)
     
     def test_basic_funcs(self):
-        self.assertEqual([17, 8],self.result.list_stat("figure"))
+        self.assertEqual(17,self.result.list_stat("figure")[0])
+        self.assertEqual(8,self.result.list_stat("figure")[1])
         self.assertEqual(['figure'],self.result.get_stats_names())
 
     def test_complex(self):
