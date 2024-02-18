@@ -163,5 +163,5 @@ examples/logs/*
 examples/data/xmls/*
 examples/data/img/*
 
-tests/api_test/visualize/data/img/*
-tests/api_test/visualize/data/xmls/*
+tests/api_test/visualize_test/data/img/*
+tests/api_test/visualize_test/data/xmls/*
