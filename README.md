@@ -36,10 +36,22 @@ At the folder config/api, check the grovid-server-config.yaml for modiying the p
 
 ## Features
 
+### 0. Main Executable
+
+While as shown at the examples this proyect can be use a a library also it can be execute as a script with the main.py
+its paramerters are  {service} for selecting the funcionality, {--protocol} {http}  {--domain} {example.com}  {--port} {8070}
+
+```bash
+python main.py {service} --protocol http --domain example.com --port 8070
+```
+
 ### 1. Generate Wordclouds from Abstracts
 
 Using the class WordCloud we extract the abstracts of the articles and create a WordCloud png of the text
 
+```bash
+python main.py visualize.word_cloud 
+```
 
 
 ### 2. Bar Chart with the Number of Figures per Article
@@ -47,13 +59,17 @@ Using the class WordCloud we extract the abstracts of the articles and create a 
 Using the class CountAtritubte we can count specific elments of the articles and create bar chars comparing them, at the config folder config/api there is count-config.yaml
 where we can set what atributes to find now it is set to finde <figures> elements form the xml
 
-
+```bash
+python main.py visualize.stadistic 
+```
 
 ### 3. List Article Links
 
 The class SearchLink will find <ref> elements and https links at the articles and list them displaying a table using the rich library
 
-
+```bash
+python main.py visualize.links_search
+```
 
 ## License
 
