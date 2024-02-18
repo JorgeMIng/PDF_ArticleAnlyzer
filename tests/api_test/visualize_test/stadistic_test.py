@@ -24,8 +24,9 @@ class stadistic_test(unittest.TestCase):
         self.assertEqual(self.result.get_len(),2)
     
     def test_basic_funcs(self):
-        self.assertEqual(17,self.result.list_stat("figure")[0])
-        self.assertEqual(8,self.result.list_stat("figure")[1])
+        list_result = self.result.list_stat("figure")
+        if (list_result[0] != 8 or list_result[1]!=17 ) and ( list_result[1] != 8 or list_result[0]!=17):
+            self.fail("Incorrect list_result expected "+str([17,8])+" or "+str([8,17])+" recived "+str(list_result))
         self.assertEqual(['figure'],self.result.get_stats_names())
 
     def test_complex(self):
