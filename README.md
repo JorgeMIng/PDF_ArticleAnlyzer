@@ -25,6 +25,15 @@ This repository uses libraries, so make sure to clone recursively to get all nec
 pip install -r requirements.txt
 ```
 
+
+### SetUp Packages
+ This repository has a setup.py using setuptools
+
+setup install para intalar el paquete localmente
+```bash
+python setup install
+```
+
 Install the required dependencies for the project.
 
 ### Configure Grobid Client
