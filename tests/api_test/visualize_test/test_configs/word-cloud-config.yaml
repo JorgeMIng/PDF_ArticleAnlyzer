@@ -1,12 +1,12 @@
 # Word Cloud server-config
 data:
-  data_dir: "tests/api_test/visualize_test/data/PDFs"
+  data_dir: "data_tests/PDFs"
   format: ".pdf"
   recursive: True
 
 grobid:
   cache: True
-  cache_dir: "tests/api_test/visualize_test/data/xmls"
+  cache_dir: "data_tests/xmls"
   operation_key: "processFulltextDocument"
   format: ".grobid.tei.xml"
   recursive: True
@@ -14,7 +14,7 @@ grobid:
 image:
   width: 1000
   height: 1000
-  cache_dir: "tests/api_test/visualize_test/data/img/cloud_img"
+  cache_dir: "data_tests/img/cloud_img"
   cache: True
   format: ".png"
   background: "white"

@@ -1,19 +1,19 @@
 # Word Cloud server-config
 data:
-  data_dir: "data/PDFs"
+  data_dir: "data_main/PDFs"
   format: ".pdf"
   recursive: True
 
 grobid:
   cache: True
-  cache_dir: "data/xmls"
+  cache_dir: "data_main/xmls"
   operation_key: "processFulltextDocument"
   format: ".grobid.tei.xml"
   recursive: True
 
 plot:
   width: 0.8
-  cache_dir: "data/img/count_img"
+  cache_dir: "data_main/img/count_img"
   format: ".png"
   align: "center"
   color: "blue"

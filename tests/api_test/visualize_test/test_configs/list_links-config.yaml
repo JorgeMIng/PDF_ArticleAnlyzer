@@ -1,12 +1,12 @@
 # General Config for any api
 data:
-  data_dir: tests/api_test/visualize_test/data/PDFs
+  data_dir: data_tests/PDFs
   format: .pdf
   recursive: True
 
 grobid:
   cache: True
-  cache_dir: tests/api_test/visualize_test/data/xmls
+  cache_dir: data_tests/xmls
   operation_key: processFulltextDocument
   format: .grobid.tei.xml
   recursive: True

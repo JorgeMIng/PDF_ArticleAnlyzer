@@ -3,6 +3,7 @@ from pdf_analyzer.api.grobid_client_python.grobid_client.grobid_client import Gr
 from pdf_analyzer.logger import logging
 from bs4 import BeautifulSoup
 from omegaconf import DictConfig
+from omegaconf import OmegaConf
 from wordcloud import WordCloud as WC
 import matplotlib.pyplot as plt
 
@@ -29,10 +30,11 @@ class BaseAPI():
             if len(self.original_files_names)==0:
                 messege="No files found at "+full_path+" with format "+self.api_config.data.format
                 logging.warning(messege)
-            
-            api = GrobidClient(grobid_server=url)
             api_working=False
+            
+            
             try:
+                api = GrobidClient(grobid_server=url)
                 api.process(self.api_config.grobid.operation_key,self.api_config.data.data_dir,output=self.api_config.grobid.cache_dir,force=not self.api_config.grobid.cache)
             except Exception as e:
                 logging.error("Grobid is not online :"+str(e))
@@ -48,7 +50,10 @@ class BaseAPI():
             if not api_working and len(files_names)>0:
                 messege="The grobid server was not online the cache files from last execution will be used instead"
                 logging.warning(messege)
-            
+            elif not api_working and len(files_names)==0:
+                messege="The grobid server was not online the cache files from last execution will be used instead"
+                logging.info("There was no cahced files to process")
+                
             if(len(files_names)>0):
                 self.proccesed_files = list(map(lambda file_path: self.process_file(file_path), files_names))
             else:

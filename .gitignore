@@ -163,5 +163,10 @@ examples/logs/*
 examples/data/xmls/*
 examples/data/img/*
 
-tests/api_test/visualize_test/data/img/*
-tests/api_test/visualize_test/data/xmls/*
+logs/*
+
+data_main/xmls/*
+data_main/img/*
+
+data_tests/xmls/*
+data_tests/img/*

@@ -38,7 +38,9 @@ class FileUploader():
         Returns:
             _type_: _description_
         """
-        
+        if  not os.path.exists(self.data_dir):
+            os.makedirs(self.data_dir)
+                 
         if not os.path.exists(self.data_dir) or not os.path.isdir(self.data_dir):
             error_messege = "data_dir: "+self.data_dir+" is not a valid or existing directory"
             logging.error(error_messege)
