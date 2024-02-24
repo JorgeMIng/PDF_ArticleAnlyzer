@@ -41,6 +41,12 @@ Install the required dependencies for the project.
 At the folder config/api, check the grovid-server-config.yaml for modiying the protocol (http,https), domain(example.com), and port (8070) before starting
 
 
+### Configure Grobid Server
+
+This project uses a Grobid Server for working make sure there is a online grobid server, you could use docker to run a local grobid server
+ [Link on hot to setup a grobid server](https://grobid.readthedocs.io/en/latest/Grobid-docker/)
+
+
 # At folder examples there are some notebooks with a brief demostration of the funcionalities and how to use the class
 
 ## Features
@@ -88,3 +94,11 @@ This project is under the Apache 2.0 License. Refer to the [LICENSE](LICENSE) fi
 
 - Name: Jorge Martin Izquierdo
 - Email: jorge.martin.izquierdo@alumnos.upm.es
+
+
+## Bibliography
+
+As this project uses the grobid cliente api and server as base for working checkout the original author of this two programs
+    GROBID (2008-2022) <https://github.com/kermitt2/grobid>
+    GROBID (2008-2022) <https://github.com/kermitt2/grobid>_client_python
+
