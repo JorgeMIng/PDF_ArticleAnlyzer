@@ -24,9 +24,9 @@ sphinx:
 #    - pdf
 #    - epub
 submodules:
-  - path: pdf_analyzer/api/grobid_client_python
-    name: Grobid-client
-    url: https://github.com/kermitt2/grobid_client_python.git
+  Grobid-client:
+    - path: pdf_analyzer/api/grobid_client_python
+      url: https://github.com/kermitt2/grobid_client_python.git
 # Optional but recommended, declare the Python requirements required
 # to build your documentation
 # See https://docs.readthedocs.io/en/stable/guides/reproducible-builds.html
