@@ -14,8 +14,9 @@ import os
 
 class BaseAPI():
     
-    """_summary_ general class for functions that use grobid
-    """
+    """_summary_  All grobid funcionalites uses this class as base
+    defining its proces_file function that is applied to all files load to grobid
+    """   
     def __init__(self,api_config:DictConfig,server_config:DictConfig):
         
    
