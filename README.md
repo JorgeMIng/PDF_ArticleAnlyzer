@@ -1,10 +1,10 @@
 
-# PDF_ArticleAnlyzer
+## PDF_ArticleAnlyzer
 
 Articles Anlyzer using Grobid
 
 
-## Quick Start
+## Instalation
 
 Follow these steps to get started with the project.
 
@@ -17,8 +17,6 @@ git submodule init
 git submodule updates
 ```
 
-This repository uses libraries, so make sure to clone recursively to get all necessary files.
-
 ### Install Dependencies
 
 ```bash
@@ -29,16 +27,30 @@ pip install -r requirements.txt
 ### SetUp Packages
  This repository has a setup.py using setuptools
 
-setup install para intalar el paquete localmente
+setup install for getting the packages at site-packages
 ```bash
 python setup install
 ```
 
 Install the required dependencies for the project.
 
+
+
+## Configuration
+
+This project uses config files as the form of yaml files.
+
+The main script uses the folders {base_config} and {data_main} for a correct working in case you move the main script bring those folder with it.
+
+If you use this project as a library as the examples look at the examples folders for custom config folders with the config files.
+
 ### Configure Grobid Client
 
 At the folder config/api, check the grovid-server-config.yaml for modiying the protocol (http,https), domain(example.com), and port (8070) before starting
+
+### Configure Grobid Funcionalites
+
+At the folder config/api, check the api-base-config.yaml any funcionality has those configs values in common, if you want to create a new config file dont remove those config values, any changes to the base values could end up to unexpected results.
 
 
 ### Configure Grobid Server
@@ -47,7 +59,13 @@ This project uses a Grobid Server for working make sure there is a online grobid
  [Link on hot to setup a grobid server](https://grobid.readthedocs.io/en/latest/Grobid-docker/)
 
 
-# At folder examples there are some notebooks with a brief demostration of the funcionalities and how to use the class
+
+## Tutorials
+
+### At folder examples there are some notebooks with a brief demostration of the funcionalities and how to use the class
+
+You can run the funcionalites as a library as shown at the exmples or using the main script
+
 
 ## Features
 
@@ -85,6 +103,11 @@ The class SearchLink will find <ref> elements and https links at the articles an
 ```bash
 python main.py visualize.links_search
 ```
+
+
+## Docker
+
+
 
 ## License
 

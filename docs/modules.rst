@@ -5,3 +5,5 @@ pdf_analyzer
    :maxdepth: 4
 
    pdf_analyzer
+   readme
+
