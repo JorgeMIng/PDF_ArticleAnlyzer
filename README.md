@@ -8,6 +8,15 @@ Articles Anlyzer using Grobid
 
 Follow these steps to get started with the project.
 
+### Create a enviroment
+Create a enviroment to run the repository
+
+conda create -n <name_env> python=3.11.5
+
+In case you are in python 3.11.5 you could also use python enviroments
+
+python -m venv <virtual-environment-name>
+
 ### Clone the Repository
 
 ```bash
@@ -107,8 +116,27 @@ python main.py visualize.links_search
 
 ## Docker
 
+In case you need to run this project as a container you will need to use the Dockerfile at the folder docker
 
+##### Docker Server
+First you need to have a running server with grobid
+```
+docker pull grobid/grobid:0.8.0
+```
+```
+docker run --rm --gpus all --init --ulimit core=0 -p 8070:8070 grobid/grobid:0.8.0
+```
 
+##### Grobid Client
+```
+docker build -t pdf-analyzer docker
+```
+
+```
+docker run -it pdf-analyzer /bin/bash
+```
+Now you can use 
+python main.py {service} and run the services
 ## License
 
 This project is under the Apache 2.0 License. Refer to the [LICENSE](LICENSE) file for more details.
