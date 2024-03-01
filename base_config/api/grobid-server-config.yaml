@@ -1,5 +1,5 @@
 # Grobid API server-config
 url:
   protocol: http
-  api_domain: example.com
+  api_domain: localhost
   port: 8070
