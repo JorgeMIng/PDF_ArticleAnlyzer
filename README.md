@@ -3,7 +3,9 @@
 
 Articles Anlyzer using Grobid
 
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/JorgeMIng/PDF_ArticleAnlyzer/CI)
 [![DOI](https://zenodo.org/badge/756017426.svg)](https://zenodo.org/doi/10.5281/zenodo.10735995)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 ## Instalation
 
