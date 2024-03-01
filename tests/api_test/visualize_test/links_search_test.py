@@ -21,7 +21,7 @@ class links_search_test(unittest.TestCase):
         self.assertIsNotNone(self.result)
         
     def test_len(self):
-        self.assertEqual(self.result.get_len(),2)
+        self.assertEqual(self.result.get_len(),10)
     
     def test_print_reports(self):
         try:

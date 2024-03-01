@@ -129,7 +129,7 @@ docker run --rm --gpus all --init --ulimit core=0 -p 8070:8070 grobid/grobid:0.8
 
 ##### Grobid Client
 ```
-docker build -t pdf-analyzer docker
+docker build --no-cache -t pdf-analyzer docker
 ```
 
 ```

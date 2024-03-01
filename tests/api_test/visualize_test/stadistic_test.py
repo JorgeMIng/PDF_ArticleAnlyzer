@@ -21,12 +21,12 @@ class stadistic_test(unittest.TestCase):
         self.assertIsNotNone(self.result)
         
     def test_len(self):
-        self.assertEqual(self.result.get_len(),2)
+        self.assertEqual(self.result.get_len(),10)
     
     def test_basic_funcs(self):
         list_result = self.result.list_stat("figure")
         if (list_result[0] != 8 or list_result[1]!=17 ) and ( list_result[1] != 8 or list_result[0]!=17):
-            self.fail("Incorrect list_result expected "+str([17,8])+" or "+str([8,17])+" recived "+str(list_result))
+            self.fail("Incorrect list_result expected "+str([60, 12, 3, 8, 8, 17, 14, 17, 6, 20])+" or "+str([20,6,17,14,17,8,8,3,12,60])+" recived "+str(list_result))
         self.assertEqual(['figure'],self.result.get_stats_names())
 
     def test_complex(self):
