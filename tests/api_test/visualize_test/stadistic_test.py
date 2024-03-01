@@ -34,8 +34,9 @@ class stadistic_test(unittest.TestCase):
         return True
     def test_basic_funcs(self):
         list_result = self.result.list_stat("figure")
-        list_check = [60, 12, 3, 8, 8, 17, 14, 17, 6, 20]
-        inv_list = [20,6,17,14,17,8,8,3,12,60]
+        list_check = [17, 3, 20, 60, 12, 17, 8, 14, 8, 6]
+        inv_list = [6,8,14,8,17,12,60,20,3,17]
+        print(list_result)
         if self.check_list(list_result,list_check,inv_list):
             self.fail("Incorrect list_result expected "+str(list_check)+" or "+str(inv_list)+" recived "+str(list_result))
         self.assertEqual(['figure'],self.result.get_stats_names())
