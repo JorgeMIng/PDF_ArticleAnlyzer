@@ -3,7 +3,7 @@
 
 Articles Anlyzer using Grobid
 
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/JorgeMIng/PDF_ArticleAnlyzer/CI)
+[![WorkFlow Status](https://github.com/JorgeMIng/PDF_ArticleAnlyzer/actions/workflows/python-app.yml/badge.svg)](https://github.com/JorgeMIng/PDF_ArticleAnlyzer/actions/workflows/python-app.yml)
 [![DOI](https://zenodo.org/badge/756017426.svg)](https://zenodo.org/doi/10.5281/zenodo.10735995)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
