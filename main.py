@@ -62,8 +62,8 @@ def parse_arguments():
     
     parser.add_argument(
         "--domain",
-        default="example",
-        help="domain to use, default example.com ",
+        default="localhost",
+        help="domain to use, default localhost ",
     )
     
     parser.add_argument(
