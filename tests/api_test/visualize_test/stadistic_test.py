@@ -22,11 +22,22 @@ class stadistic_test(unittest.TestCase):
         
     def test_len(self):
         self.assertEqual(self.result.get_len(),10)
-    
+        
+    def check_list(self,lista,list_check,inv_list):
+        check_normal = True
+        check_inv = True
+        for i,elem in enumerate(lista):
+            check_normal = elem == list_check[i] and check_normal
+            check_inv = elem == inv_list[i] and check_inv
+            if not check_normal and not check_inv:
+                return False
+        return True
     def test_basic_funcs(self):
         list_result = self.result.list_stat("figure")
-        if (list_result[0] != 8 or list_result[1]!=17 ) and ( list_result[1] != 8 or list_result[0]!=17):
-            self.fail("Incorrect list_result expected "+str([60, 12, 3, 8, 8, 17, 14, 17, 6, 20])+" or "+str([20,6,17,14,17,8,8,3,12,60])+" recived "+str(list_result))
+        list_check = [60, 12, 3, 8, 8, 17, 14, 17, 6, 20]
+        inv_list = [20,6,17,14,17,8,8,3,12,60]
+        if self.check_list(list_result,list_check,inv_list):
+            self.fail("Incorrect list_result expected "+str(list_check)+" or "+str(inv_list)+" recived "+str(list_result))
         self.assertEqual(['figure'],self.result.get_stats_names())
 
     def test_complex(self):
