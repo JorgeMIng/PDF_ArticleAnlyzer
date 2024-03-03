@@ -7,7 +7,6 @@ Articles Anlyzer using Grobid
 [![DOI](https://zenodo.org/badge/756017426.svg)](https://zenodo.org/doi/10.5281/zenodo.10735995)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-
 ## Instalation
 
 Follow these steps to get started with the project.
@@ -131,6 +130,7 @@ docker pull grobid/grobid:0.8.0
 docker run --rm --gpus all --init --ulimit core=0 -p 8070:8070 grobid/grobid:0.8.0
 ```
 
+
 ##### Grobid Client
 ```
 docker build --no-cache -t pdf-analyzer docker
@@ -141,6 +141,7 @@ docker run -it pdf-analyzer /bin/bash
 ```
 Now you can use 
 python main.py {service} and run the services
+
 
 ### Documentation
 
