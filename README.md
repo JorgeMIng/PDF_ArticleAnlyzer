@@ -129,10 +129,7 @@ docker pull grobid/grobid:0.8.0
 docker run --rm --gpus all --init --ulimit core=0 -p 8070:8070 grobid/grobid:0.8.0
 ```
 
-### Documentation
 
-The code is documenteted at
-[Read_The_Docs](https://pdf-articleanlyzer.readthedocs.io/en/stable/)
 ##### Grobid Client
 ```
 docker build --no-cache -t pdf-analyzer docker
@@ -143,6 +140,12 @@ docker run -it pdf-analyzer /bin/bash
 ```
 Now you can use 
 python main.py {service} and run the services
+
+
+### Documentation
+
+The code is documenteted at
+[Read_The_Docs](https://pdf-articleanlyzer.readthedocs.io/en/stable/)
 ## License
 
 This project is under the Apache 2.0 License. Refer to the [LICENSE](LICENSE) file for more details.
