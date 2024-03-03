@@ -141,6 +141,12 @@ docker run -it pdf-analyzer /bin/bash
 ```
 Now you can use 
 python main.py {service} and run the services
+
+### Documentation
+
+The code is documenteted at
+[Read_The_Docs](https://pdf-articleanlyzer.readthedocs.io/en/stable/)
+
 ## License
 
 This project is under the Apache 2.0 License. Refer to the [LICENSE](LICENSE) file for more details.
