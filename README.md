@@ -7,7 +7,10 @@ Articles Anlyzer using Grobid
 [![DOI](https://zenodo.org/badge/756017426.svg)](https://zenodo.org/doi/10.5281/zenodo.10735995)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Documentation Status](https://readthedocs.org/projects/pdf-articleanlyzer/badge/?version=latest)](https://pdf-articleanlyzer.readthedocs.io/en/latest/?badge=latest)
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2f99468f1f2f2eac95d38c728cbf4c411bc4f09d
 ## Instalation
 
 Follow these steps to get started with the project.
