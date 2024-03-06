@@ -6,6 +6,7 @@ Articles Anlyzer using Grobid
 [![WorkFlow Status](https://github.com/JorgeMIng/PDF_ArticleAnlyzer/actions/workflows/python-app.yml/badge.svg)](https://github.com/JorgeMIng/PDF_ArticleAnlyzer/actions/workflows/python-app.yml)
 [![DOI](https://zenodo.org/badge/756017426.svg)](https://zenodo.org/doi/10.5281/zenodo.10735995)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Documentation Status](https://readthedocs.org/projects/pdf-articleanlyzer/badge/?version=latest)](https://pdf-articleanlyzer.readthedocs.io/en/latest/?badge=latest)
 ## Instalation
 
 Follow these steps to get started with the project.
