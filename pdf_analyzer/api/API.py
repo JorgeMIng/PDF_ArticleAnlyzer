@@ -35,7 +35,7 @@ class BaseAPI():
             
             
             try:
-                api = GrobidClient(grobid_server=url)
+                api = GrobidClient(grobid_server=url,timeout=None)
                 api.process(self.api_config.grobid.operation_key,self.api_config.data.data_dir,output=self.api_config.grobid.cache_dir,force=not self.api_config.grobid.cache)
             except Exception as e:
                 logging.error("Grobid is not online :"+str(e))
