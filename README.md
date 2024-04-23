@@ -6,6 +6,7 @@ Articles Anlyzer using Grobid
 [![WorkFlow Status](https://github.com/JorgeMIng/PDF_ArticleAnlyzer/actions/workflows/python-app.yml/badge.svg)](https://github.com/JorgeMIng/PDF_ArticleAnlyzer/actions/workflows/python-app.yml)
 [![DOI](https://zenodo.org/badge/756017426.svg)](https://zenodo.org/doi/10.5281/zenodo.10735995)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Documentation Status](https://readthedocs.org/projects/pdf-articleanlyzer/badge/?version=latest)](https://pdf-articleanlyzer.readthedocs.io/en/latest/?badge=latest)
 ## Instalation
 
 Follow these steps to get started with the project.
@@ -129,16 +130,24 @@ docker pull grobid/grobid:0.8.0
 docker run --rm --gpus all --init --ulimit core=0 -p 8070:8070 grobid/grobid:0.8.0
 ```
 
+
 ##### Grobid Client
 ```
 docker build --no-cache -t pdf-analyzer docker
 ```
 
 ```
-docker run -it pdf-analyzer /bin/bash
+docker run -it --network host pdf-analyzer /bin/bash
 ```
 Now you can use 
 python main.py {service} and run the services
+
+
+### Documentation
+
+The code is documenteted at
+[Read_The_Docs](https://pdf-articleanlyzer.readthedocs.io/en/stable/)
+
 ## License
 
 This project is under the Apache 2.0 License. Refer to the [LICENSE](LICENSE) file for more details.
