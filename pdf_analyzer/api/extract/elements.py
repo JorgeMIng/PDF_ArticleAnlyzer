@@ -19,8 +19,9 @@ class extract_element(BaseAPI):
     """
     def __init__(self,api_config:DictConfig,server_config:DictConfig):
         try:
-            self.dir_start = api_config.dir
-            self.element_find = api_config.element
+            self.dir_start = api_config.extract.dir
+            self.element_find = api_config.extract.element
+            self.config = api_config
             super().__init__(api_config,server_config)
             self.elements =self.proccesed_files
         except Exception as e:
@@ -48,12 +49,13 @@ class extract_element(BaseAPI):
         file_name = self.extract_file_name(file_path)
         soup = super().process_file(file_path)
         
-        if self.dir_start!="null":
+        if self.dir_start is not None:
             soup = self.find_part(soup,self.dir_start)
             if soup ==None:
-                return None
-                
-        elements_found = soup.find_all(self.element_find)
+                return result_dict
+        if self.element_find==None:
+            return result_dict
+        elements_found = soup.find_all(self.element_find,type=self.config.extract.type)
         result_dict["file_name"] = file_name
         result_dict["elements"] =elements_found
         
