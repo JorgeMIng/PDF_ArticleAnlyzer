@@ -1,1 +1,1 @@
-from pdf_analyzer.api.extract import authors,elements
+from pdf_analyzer.api.extract import elements

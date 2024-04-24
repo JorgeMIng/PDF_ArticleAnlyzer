@@ -4,33 +4,12 @@ from pdf_analyzer.api.API import BaseAPI
 from pdf_analyzer.logger import logging
 from bs4 import BeautifulSoup
 from omegaconf import DictConfig
-from wordcloud import WordCloud as WC
-import matplotlib.pyplot as plt
-
-import os
-import time
 
 
 
-class extract_element(BaseAPI):
-    
-    """_summary_ WordCloud when initialise creates word clouds from the pdfs
-        it will use the config file for the differente behaviours  
-    """
-    def __init__(self,api_config:DictConfig,server_config:DictConfig):
-        try:
-            self.dir_start = api_config.extract.dir
-            self.element_find = api_config.extract.element
-            self.config = api_config
-            super().__init__(api_config,server_config)
-            self.elements =self.proccesed_files
-        except Exception as e:
-            logging.error("Error with WordCloud creation :"+str(e))
-            raise ValueError(e)
 
-    #teiHeader.fileDesc.sourceDesc.biblStruct.analytic
-    
-    def find_part(self,soup,dir):
+
+def find_part(soup:BeautifulSoup,dir:str):
         partes = dir.split('.')
 
         actual = soup
@@ -43,21 +22,49 @@ class extract_element(BaseAPI):
         return actual
     
     
+def extract_element_soup(soup:BeautifulSoup,dir:str,element_find:str,type=None):
+    result_dict = dict()
+    if dir is not None:
+        soup = find_part(soup,dir)
+        if soup ==None:
+            return result_dict
+    if element_find==None:
+        return result_dict
+    elements_found = soup.find_all(element_find,type=type)
     
-    def process_file(self,file_path):
+    return elements_found
+
+
+
+class extract_elements(BaseAPI):
+    
+    """_summary_ WordCloud when initialise creates word clouds from the pdfs
+        it will use the config file for the differente behaviours  
+    """
+    def __init__(self,api_config:DictConfig,server_config:DictConfig):
+        try:
+            self.config = api_config
+            super().__init__(api_config,server_config)
+            self.elements =self.proccesed_files
+        except Exception as e:
+            logging.error("Error with WordCloud creation :"+str(e))
+            raise ValueError(e)
+
+    #teiHeader.fileDesc.sourceDesc.biblStruct.analytic
+    
+    
+    
+    
+    
+    def process_file(self,file_path:str):
         result_dict = dict()
         file_name = self.extract_file_name(file_path)
         soup = super().process_file(file_path)
         
-        if self.dir_start is not None:
-            soup = self.find_part(soup,self.dir_start)
-            if soup ==None:
-                return result_dict
-        if self.element_find==None:
-            return result_dict
-        elements_found = soup.find_all(self.element_find,type=self.config.extract.type)
+        found_elements = extract_element_soup(soup,self.config.extract.dir,self.config.extract.element,self.config.extract.type)
+        
         result_dict["file_name"] = file_name
-        result_dict["elements"] =elements_found
+        result_dict["elements"] =found_elements
         
         logging.info("All elements of of the xml_file "+file_name +" have been extracted")
         
