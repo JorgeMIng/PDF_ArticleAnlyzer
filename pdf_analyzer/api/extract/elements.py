@@ -24,12 +24,12 @@ def find_part(soup:BeautifulSoup,dir:str):
     
 def extract_element_soup(soup:BeautifulSoup,dir:str,element_find:str,type=None):
     result_dict = dict()
-    if dir is not None:
+    if dir is not None :
         soup = find_part(soup,dir)
         if soup ==None:
             return result_dict
     if element_find==None:
-        return result_dict
+        return soup
     elements_found = soup.find_all(element_find,type=type)
     
     return elements_found
@@ -77,7 +77,7 @@ class extract_elements(BaseAPI):
     def print_elements(self):
         try:
             for file in self.elements:
-                print("Showing elements "+self.element_find+" in paper "+file["file_name"]+"\n\n")
+                print("Showing elements "+self.config.extract.element+" in paper "+file["file_name"]+"\n\n")
                 for element in file["elements"]:
                     print(element)
                     print("\n")
