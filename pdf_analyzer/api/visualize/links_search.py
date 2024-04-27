@@ -1,5 +1,5 @@
 from pdf_analyzer.uploaders.file_uploader import FileUploader
-from pdf_analyzer.api.grobid_client_python.grobid_client.grobid_client import GrobidClient
+from grobid_client.grobid_client import GrobidClient
 from pdf_analyzer.logger import logging
 from bs4 import BeautifulSoup
 from bs4.element import Tag
