@@ -25,8 +25,6 @@ python -m venv <virtual-environment-name>
 ```bash
 git clone --recursive <REPOSITORY_URL>
 cd <DIRECTORY_NAME>
-git submodule init
-git submodule updates
 ```
 
 ### Install Dependencies
@@ -41,7 +39,7 @@ pip install -r requirements.txt
 
 setup install for getting the packages at site-packages
 ```bash
-python setup install
+python setup.py install
 ```
 
 Install the required dependencies for the project.
