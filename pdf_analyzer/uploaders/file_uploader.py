@@ -3,7 +3,7 @@ from pdf_analyzer.logger import logging
 import os
 import glob
 from bs4 import BeautifulSoup
-from pdf_analyzer.api.grobid_client_python.grobid_client.grobid_client import GrobidClient
+from grobid_client.grobid_client import GrobidClient
 from typing import Callable, Dict, List, Optional, Union,IO
 
      

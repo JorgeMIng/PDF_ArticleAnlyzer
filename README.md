@@ -25,8 +25,6 @@ python -m venv <virtual-environment-name>
 ```bash
 git clone --recursive <REPOSITORY_URL>
 cd <DIRECTORY_NAME>
-git submodule init
-git submodule updates
 ```
 
 ### Install Dependencies

@@ -28,3 +28,4 @@ soupsieve==2.5
 urllib3==2.2.0
 wordcloud==1.9.3
 lxml==5.1.0
+grobid-client-python==0.0.8
