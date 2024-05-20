@@ -41,7 +41,7 @@ pip install -r requirements.txt
 
 setup install for getting the packages at site-packages
 ```bash
-python setup install
+python setup.py install
 ```
 
 Install the required dependencies for the project.
